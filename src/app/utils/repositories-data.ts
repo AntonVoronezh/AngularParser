@@ -9,7 +9,9 @@ export class RepositoriesData {
     console.log('RepositoriesData', this.data);
   }
 
-
+  private get getCloneData(): IGithubRepository {
+    return cloneDeep(this.data);
+  }
 
 
 
