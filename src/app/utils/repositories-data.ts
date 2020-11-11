@@ -17,7 +17,13 @@ export class RepositoriesData {
     this.data = data;
   }
 
+  getDataForPanels(): IGithubRepositoryList[] {
+    return this.getCloneData.items.map(({ owner, forks }: IGithubRepositoryItem) => {
+      const { avatar_url, login, htmlUrl } = owner;
 
+      return { forks, avatar_url, login, htmlUrl } as IGithubRepositoryList;
+    });
+  }
 
 
 
