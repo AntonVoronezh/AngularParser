@@ -13,6 +13,9 @@ export class RepositoriesData {
     return cloneDeep(this.data);
   }
 
+  setData(data: IGithubRepository): void {
+    this.data = data;
+  }
 
 
 
