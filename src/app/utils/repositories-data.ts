@@ -35,5 +35,7 @@ export class RepositoriesData {
     });
   }
 
-
+  get isData(): boolean {
+    return !!this.data;
+  }
 }
