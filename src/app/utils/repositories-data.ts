@@ -25,7 +25,15 @@ export class RepositoriesData {
     });
   }
 
+  getFilterByQueryAndRow(row: string, query: string): IGithubRepositoryList[] {
+    return this.getDataForPanels().filter((item) => {
+      if (query && row && (item[row] + '').toLowerCase().includes(query.toLowerCase())) {
+        return true;
+      }
 
+      return false;
+    });
+  }
 
 
 }
