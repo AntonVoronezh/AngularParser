@@ -1,0 +1,18 @@
+<div class="filter">
+  <form [formGroup]="form">
+    <div class="filter-wrap">
+      <div>
+        <input type="radio" id="contactChoice1" name="filter" checked (click)="onRadioClick('login')" />
+        <label for="contactChoice1">login</label>
+
+        <input type="radio" id="contactChoice2" name="filter" (click)="onRadioClick('forks')" />
+        <label for="contactChoice2">forks</label>
+
+        <input type="radio" id="contactChoice3" name="filter" (click)="onRadioClick('avatar_url')" />
+        <label for="contactChoice3">avatar_url</label>
+      </div>
+      <input type="text" placeholder="Введите значение фильтра" formControlName="query" class="filter-input" />
+      <div class="btn btn-success" (click)="onResetFormHandler()">Сбросить фильтр</div>
+    </div>
+  </form>
+</div>

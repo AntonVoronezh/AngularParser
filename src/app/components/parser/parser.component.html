@@ -1,0 +1,26 @@
+<div class="container">
+  <h1 class="text-primary">Парсер Гитхаба</h1>
+  <div class="btns"></div>
+  <div class="btn btn-primary" (click)="onNextPageClickHandler()">Следующая страница по этому запросу</div>
+  <div class="btn btn-primary" (click)="onBookmarksClickHandler()">Закладки</div>
+  <div class="btn btn-primary" (click)="onSearchClickHandler()">К результатам текущего поиска</div>
+  <input
+    #inputForGithub
+    type="text"
+    placeholder="Введите значение sartakov.andrey :)"
+    class="parser"
+    (click)="onInputClickHandler()"
+  />
+  <div>Для внесения в закладки необходимо кликнуть по панели</div>
+  <app-filter [repositoriesData]="repositoriesData" (filteredRepositories)="setFilteredRepositories($event)"></app-filter>
+  <div *ngIf="loading">Loading...</div>
+  <div class="card-war">
+    <div *ngFor="let repository of repositoriesList">
+      <app-card [repository]="repository" (click)="onCardClickHandler(repository)"></app-card>
+    </div>
+  </div>
+</div>
+
+<div class="loader-wrap hide" id="loader">
+  <div class="lds-ripple"><div></div><div></div></div>
+</div>

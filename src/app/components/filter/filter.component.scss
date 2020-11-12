@@ -1,0 +1,13 @@
+.filter {
+  border: 1px dotted #ccc;
+}
+
+.filter-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-input {
+  width: 300px;
+}
