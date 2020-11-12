@@ -20,5 +20,7 @@ export class InsuranceLocalstorageService {
     return JSON.parse(localStorage.getItem(this.GITHUB_REPOSITORIES));
   }
 
-
+  public clearGithubRepositoriesData(): void {
+    localStorage.removeItem(this.GITHUB_REPOSITORIES);
+  }
 }
