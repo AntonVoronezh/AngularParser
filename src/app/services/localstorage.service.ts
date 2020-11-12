@@ -8,7 +8,9 @@ import { IGithubRepositoryList } from '../models/github-repositorie';
 export class InsuranceLocalstorageService {
   private readonly GITHUB_REPOSITORIES = 'github_repositories';
 
-
+  get isGithubRepositoriesData(): boolean {
+    return !!localStorage.getItem(this.GITHUB_REPOSITORIES);
+  }
 
 
 
