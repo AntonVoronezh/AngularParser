@@ -12,7 +12,9 @@ export class InsuranceLocalstorageService {
     return !!localStorage.getItem(this.GITHUB_REPOSITORIES);
   }
 
-
+  public saveGithubRepositoriesData(data: IGithubRepositoryList[]): void {
+    localStorage.setItem(this.GITHUB_REPOSITORIES, JSON.stringify(data));
+  }
 
 
 
